@@ -4,7 +4,9 @@ Just For Learning Css3 thanks.
 ##VIEW
 
 
-https://github.com/rifqimuzhaffar/Web-Galeri-Foto-Onepiece/assets/104374681/072105d9-dae0-4d6d-b9a9-65274bfcf399
+https://github.com/rifqimuzhaffar/Web-Galeri-Foto-Onepiece/assets/104374681/0844f8eb-fc94-4531-bd33-f3ae05c3eafe
+
+
 
 
 
