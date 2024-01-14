@@ -1,0 +1,168 @@
+body {
+  font-family: "Salsa", arial, cursive, sans-serif;
+  background-color: bisque;
+}
+
+.header {
+  display: flex;
+  /* background-color: rgba(1, 1, 1, 0.8); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.header h1 {
+  mix-blend-mode: difference;
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  margin: 1rem auto;
+  text-shadow: 1px 1px 3px black;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-image: url("../img/bg-1.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  width: 75%;
+  background-color: rgba(1, 1, 1, 0.8);
+  margin: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.container .wrapper .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container .wrapper ul li {
+  position: relative;
+  margin: 1rem 0.8rem;
+}
+
+.wrapper .gallery li a img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.gallery li span {
+  display: block;
+  text-align: center;
+  line-height: 120px;
+  width: 122px;
+  height: 122px;
+  background-color: rgba(200, 200, 200, 0.5);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.4s;
+  transform: scale(0) rotate(0);
+}
+
+.wrapper li a:hover span {
+  opacity: 1;
+  transform: scale(1) rotate(720deg);
+}
+
+.fullscreen {
+  position: fixed;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: 0.7s;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.fullscreen:target {
+  width: auto;
+  height: auto;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fullscreen img {
+  max-height: 100%;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.fullscreen:target img {
+  animation: zoomAndFade 1s;
+}
+
+.fullscreen a {
+  position: absolute;
+  top: 4.5rem;
+  background-color: red;
+  color: black;
+  line-height: 15px;
+  font-family: arial;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0;
+}
+
+.fullscreen:target a {
+  animation: closeButton 0.5s 0.5s forwards;
+}
+
+@keyframes zoomAndFade {
+  0% {
+    transform: scale(0) rotate(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes closeButton {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Media Query */
+@media (max-width: 670px) {
+  .fullscreen {
+    padding: 10rem 0;
+  }
+
+  .fullscreen a {
+    top: 9.5rem;
+  }
+
+  .fullscreen img {
+    width: 80%;
+  }
+}
